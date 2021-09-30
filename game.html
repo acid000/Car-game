@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+   
+        #back{
+            background-image: url('./back-img.jpg');
+            border: 2px solid red;
+            height: 700px;
+        }
+        #road{
+            background-image: url('./road.jpg');
+            height: 100px;
+            margin-top: -10px;
+        }
+        img{
+            height: 70px;
+            
+        }
+        button{
+            background-color: hotpink;
+            margin-left: 300px;
+            width: 90px;
+            color:black;
+            margin-top: 300px;
+            height: 80px;
+            border-radius: 10px;
+            
+        }
+        body{
+           /* background-color: lightslategrey;*/
+            height: 500px;
+        }
+    </style>
+</head>
+<body>
+    <div id="back">
+         <button onclick="start()">start</button>
+         <button onclick="stop()">stop</button>
+    </div>
+    <div id="road">
+         <img id="img" src=".\car.png">
+    </div>
+    <script>
+        function start(){
+            x=setInterval(run,100);
+        }
+        var m=0;
+        var c= document.getElementById('img')
+        
+        function run(){
+            if(m==1200){
+                clearInterval(x);
+                m=0;
+            }
+            else{
+                m+=8
+               c.style.marginLeft=m+'px';
+            }
+            
+        };
+        function stop(){
+            clearInterval(x);
+        }
+
+    </script>
+</body>
+</html>
